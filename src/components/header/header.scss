@@ -1,0 +1,146 @@
+@use "../../css/" as *;
+// header start
+// -------------------
+.header {
+    position: fixed;
+    width: 100%;
+    background: $color-3;
+    z-index: 99;
+    color: $white;
+    transition: 0.2s ease-in-out;
+    border-bottom: 1px solid rgb(53, 42, 42);
+    left: 0%;
+    top: 0%;
+    &.active {
+        background-color: $white;
+        a {
+            color: $black !important;
+        }
+        .header-right {
+            i {
+                color: $black;
+            }
+            .nav-phone {
+                i {
+                    color: $white;
+                    background: $color-2;
+                }
+            }
+        }
+        i {
+            color: $black;
+        }
+    }
+    nav.menu {
+        ul {
+            list-style: none;
+            padding: 0%;
+            margin: 0;
+
+            li {
+                a {
+                    display: block;
+                    padding: 30px 10px;
+                    color: $white;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    li {
+        &.drop-item {
+            position: relative;
+
+            &:hover {
+                .dropped-menu {
+                    opacity: 1;
+                    visibility: visible;
+                    a {
+                        color: $black;
+                    }
+                }
+            }
+            .dropped-menu {
+                position: absolute;
+                top: 100%;
+                width: 240px;
+                box-shadow: $box-shadow;
+                background-color: $white;
+                opacity: 0;
+                visibility: hidden;
+                left: 0%;
+                transition: 0.4s ease-in-out;
+                &.right {
+                    left: unset;
+                    right: 0%;
+                }
+                &.drop-search {
+                    padding: 0%;
+                    width: 400px;
+                    span {
+                        color: $black;
+                        font-weight: bold;
+                        margin-left: 5px;
+                        font-size: 20px;
+                        display: block;
+                        font-size: 1.2rem;
+                        padding: 20px 15px;
+                    }
+                    .search-input {
+                        border-top: 2px solid $color-2;
+                        input {
+                            width: 80%;
+                            padding: 15px;
+                            margin-right: 0%;
+                            outline: none;
+                            border: none;
+                        }
+                        i {
+                            margin: 0;
+                            margin-left: 30px;
+                            color: $black;
+                            padding: 0;
+                            color: $color-2;
+                            font-size: 20px;
+                        }
+                    }
+                }
+                a {
+                    transition: 0.2s ease-in;
+                    background-color: white;
+                    &:hover {
+                        box-shadow: $box-shadow;
+                        margin: 0 -5px;
+                    }
+                }
+            }
+        }
+    }
+    .header-right {
+        position: relative;
+        i {
+            margin-left: 15px;
+            margin-top: -20px;
+            padding: 50px 5px;
+        }
+
+        .nav-phone {
+            margin-right: 3em;
+            a {
+                color: white;
+                border: 1px solid grey;
+                padding: 12px;
+                border-radius: 8mm;
+                i {
+                    margin: 1px -12px 0px 10px;
+                    padding: 13px;
+                    background-color: $color-2;
+                    color: $color-2;
+                    background-color: $white;
+                    display: inline;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}
